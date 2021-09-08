@@ -2,17 +2,17 @@ Student Thesis
 
 Level: Masters
 
-# Heading 1 Developmental Encodings in Neuroevolution - No Free Lunch but a Peak at the Menu is Allowed
+# Developmental Encodings in Neuroevolution - No Free Lunch but a Peak at the Menu is Allowed
 
  
  
-# Heading 2 Abstract:
+## Abstract:
  
 NeuroEvolution besides deep learning is considered the most promising method to train and optimize neural networks. Neuroevolution uses genetic algorithms to train the controller of an agent performing various tasks. Traditionally, the controller of an agent will be encoded in a genome which will be directly translated into the neural network of the controller. All weights and the connections will be described by their elements in the genome of the agent. Direct Encoding – states if there is a single change in the genome it directly affects a change in the brain. Over time, different forms of encoding have been developed, such as Indirect and Developmental Encodings. This paper mainly concentrates on Developmental Encoding and how it could improve NeuroEvolution. The No-Free Lunch theorem states that there is no specific optimization method that would outperform any other. This does not mean that the genetic encodings could not outperform other methods on specific neuroevolutionary tasks. However, we do not know what tasks this might be. Thus here a range of different tasks is tested using different encodings. The hope is to find in which task domains developmental encodings perform best.
  
 Keywords: NeuroEvolution, Genetic Algorithms, Direct Encoding, Indirect Encodings, Developmental Encodings, MABE
  
-# Heading 2 1. Introduction
+## 1. Introduction
 
 Search algorithms are typically applied to problems that can not be solved otherwise, such as backpropagation/deep learning (Norvig & Intelligence, 2002) or reinforcement learning. The search should be as efficient and thus fast as possible, reducing the computational cost and waiting time. This suggests that one should look for a search algorithm that is optimal for each problem. However, the No Free Lunch Theorem (Schaffer, 1994; Wolpert & Macready, 1995; Wolpert, 1996; Wolpert & Macready, 1997) found that this is an impossible task. No Free Lunch Theorem (NFL) states that when applying different search algorithms on all possible problems, it turns out that on average they all perform the same. While this makes the search for a perfect search algorithm futile, it does not prevent us from finding what kind of search algorithm is optimal for a particular subdomain of problems. After all, while maybe not being able to deploy the perfect one for all problems, it might be good enough to use a specific algorithm optimal on a specific domain, as it has been shown before in neuroevolution (Hintze, Schossau, & Bohm, 2019).
 
@@ -28,7 +28,7 @@ This kind of developmental encoding is not only indirect but also happens over m
 
 Extending the domain of indirect encodings to include developmental processes is one thing, however, the expectation is, that these more biological systems should also perform better. At the same time, we know from the NFL theorem, that no system will ultimately be better on all tasks. Previous results, when testing the different encodings describes above, also support this idea (Hintze, Hiesinger, & Schossau, 2020). Here, we want to explore which kind of tasks, different encodings thrive, and where direct encodings might be more optimal.
 
-# Heading 2 1.2. Background Study:
+## 1.2. Background Study:
 
 The previously performed study on the buffet method (Hintze, Schossau, & Bohm, 2019) tested different computational tasks, and how a GA performs when optimizing different neural computational systems. This study already confirmed that the no-free lunch theorem applies to different neural network structures. The tasks used in that study were already implemented in Modular Agent-Based Evolver (MABE). We took the opportunity to test the different encodings on these previously defined environments by selecting only a few substrates that were performing better in their field. However, we need to make adjustments to adapt the MABE framework to our experiment. Overall, they found that the performance of the buffet method was better than others in most of the tasks but still not an ideal one and it is difficult to define good benchmarks.
 
@@ -40,7 +40,7 @@ However, developmental encodings present another alternative. They take into acc
 
 MABE is a digital tool developed to make computational modeling experiments easy (Bohm & Hintze, 2017). It is similar to that of a vanilla code on which we can make changes according to our requirements. MABE is a framework that contains different modules, like genomes, brains, worlds, optimizers, groups. These modules are interconnected. Before the difficulty of digital evolution was more complex and time taking, so MABE was developed to make it simpler and more effective than its predecessor. However, the task environments were implemented in an older version of MABE, but the brains were implemented in a newer version. Thus, before experiments could be conducted, code had to be migrated and updated from one version into the other. Interestingly, the core design principle of MABE is to create modules that can be reused and recombined with each other. This work is a testament to the success of this design principle.
 
-# Heading 2 1.3. Objectives:
+## 1.3. Objectives:
 
 In this paper, we have explored different types of encoding over different possible tasks by developing an agent. Through this, we wanted to understand does the structure of encoding matters. And we also wanted to know does the developmental encoding outperforms direct encoding in any environment. The task can be achieved by:
 
@@ -50,23 +50,23 @@ In this paper, we have explored different types of encoding over different possi
 
 We wanted to look into a certain category of encoding and understand which type of encoding performs better in different conditions. As we are looking at a subset of brains and environments and understand which brain is optimal in which environment. The real question can be are there any pairs that are better than other combinations. This confirms that it's not always one brain or environment which performs better all the time. Through this, we can confirm that the NFL still applies to those certain sets of brains and environments. 
 
-2. Methodology
+## 2. Methodology
 
 MABE(Modular Agent-Based Evolver) (Bohm & Hintze, 2017) is a digital tool that allows us to implement the Digital Evolution on it. It has basic elements, and the users can modify it according to their requirements. It was first introduced in 2016, and from then on it was modified according to the requirements. Basically, in terms of a simple understanding, it is similar to a vanilla code. Vanilla code can be understood as a basic code for a particular module, this vanilla code can be modified to gain the desired outcome. Similarly, MABE does not follow a particular working structure, its main purpose is to provide a general-purpose digital tool that can be based on many solutions. MABE has a framework that consists of several modules like Brains, Genomes, Optimizers, Worlds, and Archivist.
 
-2.1 MABE Design:
+## 2.1 MABE Design:
 
 The main goal of MABE is to build software that helps the user to create a custom version by decreasing the build time and cost. When MABE is installed the default version is configured with a typical MABE case. The example contains Organisms that have a Circular Genome that encodes the Markov Brain. A GA Optimizer (Method to generate a new population using roulette wheel selection) selects the highly scored optimizer to form a new population. Archivists are used to saving and tracking the data. Understanding a MABE is very easy and quick. MABE generates the configuration files automatically with the embedded documentation. These files help the user to alter the MABE behavior by changing the parameters such as the modules like brains, genomes, environments, or the population size or run duration.
 
 Since various elements, worlds specifically, needed to be ported from an older version of MABE to a newer one, as well as they needed to be integrated into their new context, the structure of MABE is laid out in the next paragraphs.
 
-2.2 Modules in MABE:
+## 2.2 Modules in MABE:
 
-2.2.1 Genomes:
+### 2.2.1 Genomes:
 
 Genome is the genetic structure of an organism with four nucleotides – A, C, G, and T. These will play a key role during evolution. Mutations will apply small changes to the organism’s performance and are thus the elements on which evolution progresses. But here in our study, we are not restricted to these four types of nucleotides, our genome is a list of continuous or discrete values necessary to encode the brains investigated here. Genomes experience point mutations (that is single site changes), duplications, and deletion. Point mutations happen with a likelihood of 0.005 per site, deletions, and gene duplications of 128 to 512 nucleotides (determined by a uniform random distribution) happen with a probability of 0.1 per replication of the genome. Genomes are used by Brains and are used to encode how each individual type of brain is encoded.
 
-2.2.2 Brains:
+### 2.2.2 Brains:
 
 The brain is the key organ for most organisms. The brain takes the inputs from various sources, then processes the information accordingly and gives the output. In the same way, Brains in MABE act as the data processing units which receive inputs and deliver outputs. In this study, we have considered five brains. The difference between each brain can be described as how they convert the inputs to outputs using the internal algorithms. Our brains are built by using the genome structure by encoding it directly or indirectly. Each brain has its computational algorithm. These brains do not have any information regarding the genomic structure, they will just take the information, process it, and give the output. Different types of brains in MABE are:
 
@@ -82,43 +82,63 @@ Indirect Hyper Developmental Encoding (CPPN-GRN): It is a type of hybrid indirec
 
 Developmental Hyper Encoding (GRN-CPPN): The genome is translated as the weight matrix to the GRN and GRN’s run for some specific number of steps resulting in a gene expression vector which is used to define a CPPN and then CPPN’s output values are given as weights to the RNN.
 
-2.2.3 Optimizers:
+### 2.2.3 Optimizers:
 
 Optimizers use the information world generates about the performance of the agents and use this information for creating the next generation. They are in essence the “selection” part of evolution. Here specifically, a genetic algorithm was used, which selects genomes to be copied into the next generation proportionally to the performance of their associated agent. This method is allied roulette wheel selection. Other options are available, but since we are not interested in other forms of selection they are not any concern.
 
-2.2.4 Archivist:
+### 2.2.4 Archivist:
 
 Archivists determine what kind of data needs to be stored and when it needs to collect data. Archivists generate the files in a CSV format which is human-readable and supported by many tools. Generally, archivists produce two types of files. One is temporal files which have the data record over time, which means it has the data regarding the highest-scoring organism in the population or the average of all organisms in the population. The second file is a record of the genomes along the line of descent (LOD) (Lenski, Ofria, Pennock, & Adami, 2003). 
 
 Generally speaking, MABE produces a lot of information, the archivist filters and saves that part of the data the researchers are interested in.
 
-2.2.5 Worlds:
+### 2.2.5 Worlds:
 
 Worlds are simple environments, where we test the capability of the organism which is controlled by a brain. Each world’s functionality is different from the other. We test our five brains with each of the following worlds and try to find which brain is performing the best in which environment. For this study, we choose 9 Static worlds and one dynamic changing world. The static worlds come from a previous study about the no-free lunch theorem and thus created these as benchmarks (Hintze, Schossau, & Bohm, 2019). The changing environment was used before to explore the effects of dynamically changing environments on the complexity of the brain (Hintze, Hiesinger, & Schossau, 2020). They are:
 
-XOR world: In this world, a Classic Xor operation is performed (James & Tucker, 2004). Where the brain is given the set of logical gate inputs to the agent and expects the output. The performance of the agent is evaluated by comparing the original output with the output of the agent. The performance is noted down as the score of the agent for that particular generation.
+#### XOR world: 
 
-Symbolic Regressor: It is a type of regression analysis. Where the agent will be shown different functions and the performance of the agent is then determined by the difference between the output of the function and the response given by the agent, which is then summed and squared.
+In this world, a Classic Xor operation is performed (James & Tucker, 2004). Where the brain is given the set of logical gate inputs to the agent and expects the output. The performance of the agent is evaluated by comparing the original output with the output of the agent. The performance is noted down as the score of the agent for that particular generation.
 
-Pendulum World: It is an experiment where we have a cart that can move either left or right (Barto, Sutton, & Anderson, 1983). A beam is mounted on the top of the cart which can freely move on a perpendicular axis. The job of the agent is to move left or right in such a way that it needs to balance the beam perpendicular to the cart to which it has been attached.
+#### Symbolic Regressor: 
+
+It is a type of regression analysis. Where the agent will be shown different functions and the performance of the agent is then determined by the difference between the output of the function and the response given by the agent, which is then summed and squared.
+
+#### Pendulum World:
+
+It is an experiment where we have a cart that can move either left or right (Barto, Sutton, & Anderson, 1983). A beam is mounted on the top of the cart which can freely move on a perpendicular axis. The job of the agent is to move left or right in such a way that it needs to balance the beam perpendicular to the cart to which it has been attached.
  
-Value Judgment: It is a kind of decision-making experiment. Here the agent will be given two signals and its job is to identify the strongest signal between them (Kvam, Cesario, Schossau, Eisthen, & Hintze, 2015). In our research, a random binary number will decide which signal should be the stronger one resulting in the inputs of the agent. The stronger input will be having a 0.55 probability of being 1 and a 0.45 probability of being 0. Whereas the weaker signal will be having a 0.55 probability of being 0 and a 0.45 probability of being 1. The agent will be provided with 100 input updates and the first 80 updates of results of the agent will be ignored. After the 80 updates, the remaining results from the agent are continuously evaluated and the agent needs to make a decision of which signal is stronger. Then the overall performance of the agent is calculated.
+#### Value Judgment: 
 
-Simple Berry: In this, the agent will analyze the past information and optimize future decisions (Bohm & Hintze, 2017). Let’s consider a square block surrounded by a wall and filled with two types of berries red or blue. The agent can move forward, left or right, or consume the food present in the current block. If the agent consumes the food in the current block and moves forward the previous block will be filled with red berry or blueberry randomly. The agent can sense the food present in the current block, i.e blue or red, or empty. Consumption of each berry will be rewarded to the agent, however, if the consumed food differs from the previous food the agent will be negatively rewarded. So the agent needs to consume the food in a way so that he will be having the highest score for the generation.
+It is a kind of decision-making experiment. Here the agent will be given two signals and its job is to identify the strongest signal between them (Kvam, Cesario, Schossau, Eisthen, & Hintze, 2015). In our research, a random binary number will decide which signal should be the stronger one resulting in the inputs of the agent. The stronger input will be having a 0.55 probability of being 1 and a 0.45 probability of being 0. Whereas the weaker signal will be having a 0.55 probability of being 0 and a 0.45 probability of being 1. The agent will be provided with 100 input updates and the first 80 updates of results of the agent will be ignored. After the 80 updates, the remaining results from the agent are continuously evaluated and the agent needs to make a decision of which signal is stronger. Then the overall performance of the agent is calculated.
 
-Block-Catch: Here the agent needs to catch or avoid the blocks which are coming towards them (Beer & others, 1996). Consider a game where a bar is placed at the bottom and one box is falling at a time. But only some of them have rewards and others do not. So the objective of our bar is to catch only boxes with food in it and leave the empty ones.   
+#### Simple Berry:
+
+In this, the agent will analyze the past information and optimize future decisions (Bohm & Hintze, 2017). Let’s consider a square block surrounded by a wall and filled with two types of berries red or blue. The agent can move forward, left or right, or consume the food present in the current block. If the agent consumes the food in the current block and moves forward the previous block will be filled with red berry or blueberry randomly. The agent can sense the food present in the current block, i.e blue or red, or empty. Consumption of each berry will be rewarded to the agent, however, if the consumed food differs from the previous food the agent will be negatively rewarded. So the agent needs to consume the food in a way so that he will be having the highest score for the generation.
+
+#### Block-Catch: 
+
+Here the agent needs to catch or avoid the blocks which are coming towards them (Beer & others, 1996). Consider a game where a bar is placed at the bottom and one box is falling at a time. But only some of them have rewards and others do not. So the objective of our bar is to catch only boxes with food in it and leave the empty ones.   
  
-Edlund Maze: In this task, the agent needs to navigate through a path with long walls and a single door as an exit (Edlund, et al., 2011). When passing through the walls, the agent will be receiving a signal, if signal 1 indicates that the next door is towards the right of the agent and no signal indicates the next door is not towards his right. The agent can perform only three actions: Move forward, Move Left or Move Right. The agent needs to remember the previous signal until he finds the next door in the wall.  
+#### Edlund Maze:
 
-Path Association: In this task, the agent must follow a safe path through a poisonous environment utilizing the directions like moving forward, left, or right sent by the signal (Grabowski, Bryson, Dyer, Ofria, & Pennock, 2010). Information about the end of the path will not be provided to the agent. The agent can sense the information of its current location: Either the agent is on the path or in the poison. 
+In this task, the agent needs to navigate through a path with long walls and a single door as an exit (Edlund, et al., 2011). When passing through the walls, the agent will be receiving a signal, if signal 1 indicates that the next door is towards the right of the agent and no signal indicates the next door is not towards his right. The agent can perform only three actions: Move forward, Move Left or Move Right. The agent needs to remember the previous signal until he finds the next door in the wall.  
+
+#### Path Association: 
+
+In this task, the agent must follow a safe path through a poisonous environment utilizing the directions like moving forward, left, or right sent by the signal (Grabowski, Bryson, Dyer, Ofria, & Pennock, 2010). Information about the end of the path will not be provided to the agent. The agent can sense the information of its current location: Either the agent is on the path or in the poison. 
  
-Noisy Foraging: In this task, the agent needs to find food placed on a random grid, once the food is collected the agent needs to return to the home position to increase fitness. For this, the home position is marked in the grid and the agent does not know the position of the food, so the agent has to find these positions, mark them, take the food and return to the home position. At each collection of the food, the placement of the next food is moved farther away from home. The agents have eight detectors each covering a 45 deg arc which is used to detect the food and the home location. The agent also has some additional sensors which inform the agent when it reaches the home or where he can find the next food location.
+#### Noisy Foraging: 
 
-Dynamic Changing Environment: In this task, the agent will be provided with 4 different kinds of food. The combination of each food will be positively or negatively rewarded to the agent. The agent needs to learn to serve in the specific environment by eating the right combination of foods. As this is a changing environment the agent needs to be adapted to the environmental changes. The environment changes happen from a fast-changing to a very slow-changing and no change (0.0001, 0.001, 0.01, 0.1, and 0). The performance of the agent is calculated by the amount of food eaten multiplied by the reward of the combination of the food added to the overall food eaten. 
+In this task, the agent needs to find food placed on a random grid, once the food is collected the agent needs to return to the home position to increase fitness. For this, the home position is marked in the grid and the agent does not know the position of the food, so the agent has to find these positions, mark them, take the food and return to the home position. At each collection of the food, the placement of the next food is moved farther away from home. The agents have eight detectors each covering a 45 deg arc which is used to detect the food and the home location. The agent also has some additional sensors which inform the agent when it reaches the home or where he can find the next food location.
+
+#### Dynamic Changing Environment: 
+
+In this task, the agent will be provided with 4 different kinds of food. The combination of each food will be positively or negatively rewarded to the agent. The agent needs to learn to serve in the specific environment by eating the right combination of foods. As this is a changing environment the agent needs to be adapted to the environmental changes. The environment changes happen from a fast-changing to a very slow-changing and no change (0.0001, 0.001, 0.01, 0.1, and 0). The performance of the agent is calculated by the amount of food eaten multiplied by the reward of the combination of the food added to the overall food eaten. 
 
 
 
-2.3 Experimental Design:
+##2.3 Experimental Design:
 
 All the environments were present in the old MABE and the brains were present in the new MABE. During our first phase, we need to adapt our environments from the old MABE with the new MABE. After bringing all the environments and brains compatible with the new MABE. Then for each combination of brains, we need to set up our environments. And we choose the roulette wheel section as the optimizer. To complete our run fast we have given our combination of brains and environments to MABE on a high-performance computer. The setup is described in such a way that each experiment should run over 100 replicates with 10000 generations each for the static environment. After the run is completed, we will be given the output as the LOD files. An example of a file is LOD_5_2_20. Where 5 represents the Environment name, 2 represents the Brain name and 20 represents the replicate. Each file will have a Generation number, ID, and Score. For the Dynamic Changing Environment, the experiment should run over 30 replicates with 200,000 generations each. After the successful run, the output file will be given as LOD_2_0.01_20. Where 2 represents the Brain and 0.01 describes the speed of the changing environment and 20 represents the replicate. Each file will have to have Generation Number, ID, Score, hits, bites, a combination of 4*4 with count and the reward, and a Percent Rank.
 
@@ -127,13 +147,14 @@ During our Analysis phase, for the static environment, we tried to exclude all t
 Recordings from all the files based on the brain and environments concatenated into their respective data frames using python (pandas). The respective data frames have been grouped to calculate all necessary variables for the analysis from the recordings across all the data frames.
 
 For a Dynamic environment, we need to understand how the agent has been adapted to the changing food and how better it has been performing. This is somewhat of a problem. In a static environment, the maximal performance is known, in the dynamically changing one, we need to constantly recompute which performance is optimal. The measured performance of the agent can then be understood relative to the optimal performance, here as a Percent Rank. 
+
 To calculate the percent rank at every generation, we need to generate all possible strategies, evaluate their score, and rank the actual score of the evolving agent accordingly. In this environment, the sequence of food cubes eaten determines the performance of the agent. Thus we generate all possible sequences of 8 food cubes eaten. The matrix defining how rewarding each cube is was constructed from the record data. Also, the count of each food the agent collected was stored in a similar 4*4 matrix. All possible strategies were then enumerated and their score computed using the previously defined matrices. Agents often did not eat exactly 8 food codes but more or less, requiring us to normalize the generated hypothetical performances to the actual amount of food eaten. The comparison with those numbers and the performance of the evolved agent defines the percent rank of the agent. 
 
 Implement in python, we have replicated a 4*4 matrix of food consumed with iter tools product with a repeat of 8. Then every point in the matrix is divided by the sum of the matrix and stored in a list. The reward of the food from each generation is read from the data frame and stored in another list. Then the two lists are multiplied and then summed over to form a list of all possible best scores. The original score of the agent is taken from the data frame and stored in a list. Now, each possible score is compared with the original score of the agent, this is done by finding the number of possible scores which are greater than the score of the agent summed and divided by the length of the possible score. The solution is stored in a list named Rank. The list rank describes how optimal the agent has performed for the generation considering how better he has performed in the generation. 
 
 As far as we know, this kind of performance assessment for dynamically changing environments has not been applied before.
 
-2.4 DATA
+## 2.4 DATA
 
 The data is stored from the output result using the MABE framework. The MABE framework has been set up to store different types of data from static and dynamic environments. After the setup is completed in the MABE it will be testing all environments and all brain combinations but also testing each combination 100 times independently of each other to allow for better results. 
 
@@ -161,7 +182,7 @@ Hits	The number of hits the agent has taken
 
 Bites	The number of bites the agent has taken
 
-3. Results:
+## 3. Results:
 
 Our main goal in this research is to observe that the encoding matters and if the developmental encoding outperforms the direct encoding. However, the answer to this question could also depend on environments being static or dynamic. Therefore, we have first prepared MABE to run on each combination of brains and the 9 static environments with 100 individual replicates over 10000 generations each. We expected either of the two following outcomes: Either one brain turns out to be always the most adaptable on all tasks, or, supported by the NFL theorem, we find that certain combinations of environments and encodings evolve the best, and the kind of match is different from the environment to the environment or from the brain to brain. We found that direct encoding performed better or equally well than other encodings, on all tested static environments (see Figure 1). Some of the developmental encodings failed to find the exact solution in the environment at all.
 
@@ -173,7 +194,7 @@ Based on the results from the Dynamic environment, we can say that the developme
 
 Still, hypothesis testing using the Kolmogorov-Smirnov test has been tried across the data points from different environments. Specifically, the Kolmogorov-Smirnov test for two samples, which should reveal if two sets of values were drawn from different distributions, was applied. Unfortunately, p-values were not significant (results larger than 0.1). At the same time, running more replicates in the future could confirm the differences suggested by our results.
 
-4. Discussion:
+## 4. Discussion:
 
 We have considered an experiment comparing different kinds of brains and understanding does the structure of encoding matter. Based on our results, we can say the direct brains were performing well in static environments where some developmental encoding brains were unable to find solutions for the problem in some environments. But in the dynamic changing environment the developmental encoding brains were performing better than the direct brains. To understand how the brains in the dynamic changing environment we have created a new method called Percent Rank. Percent Rank calculates how optimal the brain has performed in the changing environment which describes how the brains have been adapted to the environment. The continuous computation of percent rank, to our knowledge, has not been done to assess the relative performance of agents in dynamically changing environments, this method might prove useful in the future.
 
@@ -183,7 +204,7 @@ In the future, we would like to test different combinations of brains in differe
 
 All of this happened using GA as the optimizer. Observing that deep learning very often is preferred in training classifiers, but tasks like the one used here, are more in the domain of controlling robots, autonomous vehicles, or non-classification tasks, the GA is often the only method to solve these problems. Because deep-learned NN does not have encoding in the first place or is always directly encoded, these results do not translate to that domain.
 
-5. Conclusion
+## 5. Conclusion
 
 In this work, we are trying to understand whether developmental brains outperform direct brains in different environments. We have completed our experiment by preparing an agent using the MABE framework to test our brains in different environments.
 
@@ -191,7 +212,7 @@ Based on our comparison, the direct encoded brain was performing slightly better
 
 In conclusion, we found the no free lunch theorem to still apply, no single encoding performs well across all problem domains, even though we could identify specific combinations of encodings that fair better in some problem domains. We also found some evidence that developmental encodings indeed perform better in dynamically changing environments for these particular sets of brains and environments, but more experiments are needed for a different set of brains and environments. However, we don’t claim completeness in the results as one can use different kinds of brains and environments. In practice, when one fails to optimize a neural network by using a genetic algorithm, it is well worth trying different encodings. Specifically, if the task is dynamically changing, developmental encodings might promise better perform
 
-References
+## References
 
 Barto, A., Sutton, R., & Anderson, C. (1983). Neuronlike adaptive elements that can solve difficult learning control problems. IEEE transactions on systems, man, and cybernetics - V, 834--846.
 
