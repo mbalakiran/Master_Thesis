@@ -12,68 +12,6 @@ NeuroEvolution besides deep learning is considered the most promising method to 
  
 Keywords: NeuroEvolution, Genetic Algorithms, Direct Encoding, Indirect Encodings, Developmental Encodings, MABE
  
-INDEX
-
-List of Tables --------------------------------------------------------------------- iii
-
-List of Figures -------------------------------------------------------------------- iii
-
-1. Introduction -------------------------------------------------------------------  1
-
-1.1 Background Study---------------------------------------------------  3
-
-1.2 Objectives ------------------------------------------------------------  4
-
-2. Methodology  ------------------------------------------------------------------ 5
-
-	2.1 MABE Design ------------------------------------------------------- 5
-
-	2.2 Modules of MABE--------------------------------------------------- 5 
-
-		2.2.1 Genomes  -------------------------------------------------- 5
-
-		2.2.2 Brains  ------------------------------------------------------ 5
-
-		2.3.3 Optimizers ------------------------------------------------- 6
-
-		2.3.4 Archivist --------------------------------------------------- 6
-
-		2.3.5 Worlds  ----------------------------------------------------- 7
-
-            2.3 Experiment Design  ------------------------------------------------- 11
-
-	2.4 Data -------------------------------------------------------------------- 12
-
-3. Results --------------------------------------------------------------------------- 14
-
-4. Discussion ----------------------------------------------------------------------- 20
-
-5. Conclusion ---------------------------------------------------------------------- 21
-
-References  ------------------------------------------------------------------------- 22
-
-List of Tables:
-
-Table 1: Variable in Static Environment
-
-Table 2: Variable in Dynamic Environment
-
-List of Figures:
-
-Figure 1: Inverted Pendulum
-
-Figure 2: Block Catching
-
-Figure 3: Path Association
-
-Figure 4: Performance of Brains over Static Environment
-
-Figure 5: Boxplot of Brains over Static Environment
-
-Figure 6: Percent Rank of Brains in Dynamic Changing Environment
-
-Figure 7: Boxplot of Brains in Dynamic Changing Environment
- 
 1. Introduction
 
 Search algorithms are typically applied to problems that can not be solved otherwise, such as backpropagation/deep learning (Norvig & Intelligence, 2002) or reinforcement learning. The search should be as efficient and thus fast as possible, reducing the computational cost and waiting time. This suggests that one should look for a search algorithm that is optimal for each problem. However, the No Free Lunch Theorem (Schaffer, 1994; Wolpert & Macready, 1995; Wolpert, 1996; Wolpert & Macready, 1997) found that this is an impossible task. No Free Lunch Theorem (NFL) states that when applying different search algorithms on all possible problems, it turns out that on average they all perform the same. While this makes the search for a perfect search algorithm futile, it does not prevent us from finding what kind of search algorithm is optimal for a particular subdomain of problems. After all, while maybe not being able to deploy the perfect one for all problems, it might be good enough to use a specific algorithm optimal on a specific domain, as it has been shown before in neuroevolution (Hintze, Schossau, & Bohm, 2019).
