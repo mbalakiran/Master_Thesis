@@ -2,18 +2,17 @@ Student Thesis
 
 Level: Masters
 
-# Heading 1
-Developmental Encodings in Neuroevolution - No Free Lunch but a Peak at the Menu is Allowed
+# Heading 1 Developmental Encodings in Neuroevolution - No Free Lunch but a Peak at the Menu is Allowed
 
  
  
-Abstract:
+# Heading 2 Abstract:
  
 NeuroEvolution besides deep learning is considered the most promising method to train and optimize neural networks. Neuroevolution uses genetic algorithms to train the controller of an agent performing various tasks. Traditionally, the controller of an agent will be encoded in a genome which will be directly translated into the neural network of the controller. All weights and the connections will be described by their elements in the genome of the agent. Direct Encoding – states if there is a single change in the genome it directly affects a change in the brain. Over time, different forms of encoding have been developed, such as Indirect and Developmental Encodings. This paper mainly concentrates on Developmental Encoding and how it could improve NeuroEvolution. The No-Free Lunch theorem states that there is no specific optimization method that would outperform any other. This does not mean that the genetic encodings could not outperform other methods on specific neuroevolutionary tasks. However, we do not know what tasks this might be. Thus here a range of different tasks is tested using different encodings. The hope is to find in which task domains developmental encodings perform best.
  
 Keywords: NeuroEvolution, Genetic Algorithms, Direct Encoding, Indirect Encodings, Developmental Encodings, MABE
  
-1. Introduction
+# Heading 2 1. Introduction
 
 Search algorithms are typically applied to problems that can not be solved otherwise, such as backpropagation/deep learning (Norvig & Intelligence, 2002) or reinforcement learning. The search should be as efficient and thus fast as possible, reducing the computational cost and waiting time. This suggests that one should look for a search algorithm that is optimal for each problem. However, the No Free Lunch Theorem (Schaffer, 1994; Wolpert & Macready, 1995; Wolpert, 1996; Wolpert & Macready, 1997) found that this is an impossible task. No Free Lunch Theorem (NFL) states that when applying different search algorithms on all possible problems, it turns out that on average they all perform the same. While this makes the search for a perfect search algorithm futile, it does not prevent us from finding what kind of search algorithm is optimal for a particular subdomain of problems. After all, while maybe not being able to deploy the perfect one for all problems, it might be good enough to use a specific algorithm optimal on a specific domain, as it has been shown before in neuroevolution (Hintze, Schossau, & Bohm, 2019).
 
@@ -29,7 +28,7 @@ This kind of developmental encoding is not only indirect but also happens over m
 
 Extending the domain of indirect encodings to include developmental processes is one thing, however, the expectation is, that these more biological systems should also perform better. At the same time, we know from the NFL theorem, that no system will ultimately be better on all tasks. Previous results, when testing the different encodings describes above, also support this idea (Hintze, Hiesinger, & Schossau, 2020). Here, we want to explore which kind of tasks, different encodings thrive, and where direct encodings might be more optimal.
 
-1.2. Background Study:
+# Heading 2 1.2. Background Study:
 
 The previously performed study on the buffet method (Hintze, Schossau, & Bohm, 2019) tested different computational tasks, and how a GA performs when optimizing different neural computational systems. This study already confirmed that the no-free lunch theorem applies to different neural network structures. The tasks used in that study were already implemented in Modular Agent-Based Evolver (MABE). We took the opportunity to test the different encodings on these previously defined environments by selecting only a few substrates that were performing better in their field. However, we need to make adjustments to adapt the MABE framework to our experiment. Overall, they found that the performance of the buffet method was better than others in most of the tasks but still not an ideal one and it is difficult to define good benchmarks.
 
@@ -41,7 +40,7 @@ However, developmental encodings present another alternative. They take into acc
 
 MABE is a digital tool developed to make computational modeling experiments easy (Bohm & Hintze, 2017). It is similar to that of a vanilla code on which we can make changes according to our requirements. MABE is a framework that contains different modules, like genomes, brains, worlds, optimizers, groups. These modules are interconnected. Before the difficulty of digital evolution was more complex and time taking, so MABE was developed to make it simpler and more effective than its predecessor. However, the task environments were implemented in an older version of MABE, but the brains were implemented in a newer version. Thus, before experiments could be conducted, code had to be migrated and updated from one version into the other. Interestingly, the core design principle of MABE is to create modules that can be reused and recombined with each other. This work is a testament to the success of this design principle.
 
-1.3. Objectives:
+# Heading 2 1.3. Objectives:
 
 In this paper, we have explored different types of encoding over different possible tasks by developing an agent. Through this, we wanted to understand does the structure of encoding matters. And we also wanted to know does the developmental encoding outperforms direct encoding in any environment. The task can be achieved by:
 
