@@ -1,6 +1,6 @@
-Student Thesis
+## Student Thesis
 
-Level: Masters
+## Level: Masters
 
 # Developmental Encodings in Neuroevolution - No Free Lunch but a Peak at the Menu is Allowed
 
@@ -138,7 +138,7 @@ In this task, the agent will be provided with 4 different kinds of food. The com
 
 
 
-##2.3 Experimental Design:
+## 2.3 Experimental Design:
 
 All the environments were present in the old MABE and the brains were present in the new MABE. During our first phase, we need to adapt our environments from the old MABE with the new MABE. After bringing all the environments and brains compatible with the new MABE. Then for each combination of brains, we need to set up our environments. And we choose the roulette wheel section as the optimizer. To complete our run fast we have given our combination of brains and environments to MABE on a high-performance computer. The setup is described in such a way that each experiment should run over 100 replicates with 10000 generations each for the static environment. After the run is completed, we will be given the output as the LOD files. An example of a file is LOD_5_2_20. Where 5 represents the Environment name, 2 represents the Brain name and 20 represents the replicate. Each file will have a Generation number, ID, and Score. For the Dynamic Changing Environment, the experiment should run over 30 replicates with 200,000 generations each. After the successful run, the output file will be given as LOD_2_0.01_20. Where 2 represents the Brain and 0.01 describes the speed of the changing environment and 20 represents the replicate. Each file will have to have Generation Number, ID, Score, hits, bites, a combination of 4*4 with count and the reward, and a Percent Rank.
 
