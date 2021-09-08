@@ -2,6 +2,7 @@ Student Thesis
 
 Level: Masters
 
+# Heading 1
 Developmental Encodings in Neuroevolution - No Free Lunch but a Peak at the Menu is Allowed
 
  
